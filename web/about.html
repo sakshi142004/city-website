@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Indore</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #282c34;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin: 40px 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .about-info {
+            width: 60%;
+            padding-right: 30px;
+        }
+
+        .about-info h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about-info p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .image-column {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-column h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .image-column p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .image-column img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #fafafa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .feature-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 30%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #282c34;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+         .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button:hover {
+      background-color: #005BB5;
+    }
+     /* Dropdown Menu Styles */
+    .dropdown-menu {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none; /* Hidden by default */
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+    }
+
+    .dropdown-menu li {
+      margin: 5px 0;
+    }
+
+    .dropdown-menu li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-menu li a:hover {
+      text-decoration: underline;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Indore</h1>
+            <p>The Cleanest City in India</p>
+        </div>
+    </header>
+          
+
+  
+ 
+    <section class="about">
+        <div class="container">
+            <div class="about-info">
+                <h2>All About Indore</h2>
+                <p>Indore is a vibrant city in the state of Madhya Pradesh, India. Known for its cleanliness, bustling markets, and rich history, Indore is a place where tradition meets modernity. With a thriving economy, top-notch education, and cultural significance, Indore has earned its title as the cleanest city in India for multiple years.</p>
+                <p>Here, you will find a blend of historical monuments, modern infrastructure, and a rich cultural heritage. The people of Indore are known for their hospitality, and the food culture here is unparalleled.</p>
+            </div>
+
+            <div class="image-column">
+                <center><h3>Beautiful Views of Indore</h3></center>
+                <p>Indore offers some of the most scenic and breathtaking views. Here are some images showcasing the beauty of the city.</p>
+                <!-- Images aligned in a row -->
+                <img src="images/beautiful_view_1.jpg" alt="Indore View 1">
+               <img src="images/ahilya_bai.jpg" alt="Indore View 3">
+                <img src="images/lotus_vally.webp" alt="Indore View 3">
+				
+				<img src="images/1.jpg" alt="Indore View 3">
+                                <img src="images/hanuman_pritreshwar.jpg" alt="Indore View 3">
+            </div>
+        </div>
+    </section>
+     	  <section class="video-section">
+        <div class="container">
+            <h2>Discover Indore in Action</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="C:\Users\saksh\OneDrive\Documents\NetBeansProjects\Indore-the_heart\web\images\indore_video_my.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+				&nbsp; &nbsp; &nbsp;
+				<video controls>
+                    <source src="C:\Users\saksh\OneDrive\Documents\NetBeansProjects\Indore-the_heart\web\images\indore_video_second.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <h2>Why Indore Stands Out</h2>
+            <div class="feature-box">
+                <div class="feature">
+                    <h3>Cleanest City</h3>
+                    <p>Indore has been recognized as the cleanest city in India for several consecutive years, and its sanitation system is the pride of the city.</p>
+                </div>
+                <div class="feature">
+                    <h3>Vibrant Food Culture</h3>
+                    <p>Indore's food culture is famous for its street food, and the city's local delicacies like Poha-Jalebi, Samosa, and Dahi-Puri are loved by everyone.</p>
+                </div>
+                <div class="feature">
+                    <h3>Historic Significance</h3>
+                    <p>Indore is home to historic landmarks like Rajwada Palace, Lal Baag Palace, and Kanch Mandir, which reflect its glorious past.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 All Rights Reserved. About Indore</p>
+        </div>
+    </footer>
+    <!-- Home Button -->
+    <button class="home-button" id="homeButton"><a href="Home.jsp">🏠</a></button>
+
+  
+    <script>
+    // JavaScript for toggle functionality
+    const homeButton = document.getElementById('homeButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    homeButton.addEventListener('click', () => {
+      const isMenuVisible = dropdownMenu.style.display === 'block';
+      dropdownMenu.style.display = isMenuVisible ? 'none' : 'block';
+    });
+
+    // Optional: Close menu when clicking outside
+    window.addEventListener('click', (event) => {
+      if (!homeButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
+

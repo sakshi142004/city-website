@@ -1,0 +1,187 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21 Dec, 2024, 8:36:58 PM
+    Author     : saksh
+*/
+
+
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light background for contrast */
+        }
+        
+      
+        .content-Div-Hotel {
+            display: flex; /* Use flexbox for layout */
+            align-items: center;
+            gap:30px;
+            background-color: #fff; /* White background for the content */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            overflow: hidden; /* Prevent overflow */
+            margin-bottom: 25px; /* Space between sections */
+            padding: 10px;
+        }
+        .hotel-images {
+            
+           
+           /* flex: 0 0 50%; /* Image takes 50% of the width */
+            /*display: flex; Center the image */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        .hotel-images img {
+            width: 450px;
+            height: auto;
+            object-fit: cover;
+           
+        }
+        .hotel-text {
+            flex: 0 0 50%; /* Text takes 50% of the width */
+           /* padding: 10px; /* Add padding */
+            display: flex; /* Use flexbox for text */
+            flex-direction: column; /* Stack text vertically */
+            justify-content: center; /* Center text vertically */
+        }
+        .hotel-text h2 {
+            margin: 0; /* Remove default margin */
+            font-size: 25px; /* User-friendly font size */
+            color: #333; /* Dark text color */
+        }
+        .hotel-text p {
+            font-size: 21px; /* User-friendly font size */
+            color: #666; /* Lighter text color */
+            line-height: 1.5; /* Improve readability */
+        }
+        
+/* Header section */
+header {
+    background-color: #000; /* Black header */
+    color: white;
+    padding: 20px;
+   
+    padding: 30px; /* Increased padding */
+    min-height: 70px; /* Ensures the header has a larger height */
+
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex container for heading and search bar */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Heading styling */
+header h1 {
+    margin: 0;
+    font-size: 33px;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Search container */
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spacing between elements */
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input[type="text"], button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button styling */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    form {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    select, input[type="text"], button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+ .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button:hover {
+      background-color: #005BB5;
+    }
+     /* Dropdown Menu Styles */
+    .dropdown-menu {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none; /* Hidden by default */
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+    }
+
+    .dropdown-menu li {
+      margin: 5px 0;
+    }
+
+    .dropdown-menu li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-menu li a:hover {
+      text-decoration: underline;
+    }

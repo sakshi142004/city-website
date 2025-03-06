@@ -1,0 +1,516 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 Dec, 2024, 2:15:06 PM
+    Author     : saksh
+*/
+html{
+    scroll-behavior:smooth;
+}
+/* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease; /* Smooth fade-out effect */
+        }
+
+        #loading-text {
+            color: #fff; /* White text */
+            font-size: 3rem;
+            font-family: Arial, sans-serif;
+            letter-spacing: 3px;
+            animation: zoom-in 3s ease-out, glow 1.5s infinite alternate;
+        }
+
+        /* Zoom-In Animation */
+        @keyframes zoom-in {
+            0% {
+                transform: scale(0.5); /* Start smaller */
+                opacity: 0; /* Fully transparent */
+            }
+            50% {
+                transform: scale(1.2); /* Slightly larger */
+                opacity: 1; /* Fully visible */
+            }
+            100% {
+                transform: scale(1); /* Final size */
+            }
+        }
+
+        /* Glowing effect animation */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ff0099, 0 0 30px #ff0099;
+            }
+            100% {
+                text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+            }
+        }
+
+        /* Main Content */
+        #main-content {
+            display: none; /* Hidden initially */
+            
+            font-family: Arial, sans-serif;
+        }
+
+       /* #main-content h1 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-top: 20%;
+        }
+/* Global Styles */
+   .message {
+            text-align: justify;
+            padding-top: 200px;
+            padding-left: 100px;
+            width: 100%;
+            height: 900px;
+            font-size: 200px;
+            font-weight: bold;
+            color: #ff6347;
+            text-shadow: 0 5px 10px rgba(255, 99, 71, 0.6), 0 0 20px rgba(255, 99, 71, 0.6), 0 0 30px rgba(255, 99, 71, 0.6);
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            animation: fadeIn 1s forwards;
+            background: radial-gradient(#000000, #000000f0, #000000cf);
+            overflow: hidden;
+
+        }
+      
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 3s infinite linear, fadeOutBubbles 3s forwards;
+            transition: opacity 1s ease-in-out;
+            opacity: 1;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+        }
+   /* Floating animation for bubbles */
+        @keyframes float {
+            0% { opacity: 1; transform: translateY(100vh); }
+            100% { opacity: 0; transform: scale(1.5) translateY(-100vh); }
+        }
+
+        /* Fading animation for message */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+
+            }
+        }
+
+        /* Fade out animation for bubbles after 10 seconds */
+        @keyframes fadeOutBubbles {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+  /* Fade-in animation for message */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+
+        body {
+            font-family: Arial,sans-serif;
+            margin: 0;
+            padding: 0;
+           
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+       
+        
+        #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire background */
+    z-index: -1; /* Keeps the video in the background */
+}
+
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        p {
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #007BFF;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #343a40;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.5rem 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
+
+        nav ul li .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        nav ul li .dropdown-menu li a {
+            color: #343a40;
+            padding: 0.5rem 1rem;
+        }
+
+        nav ul li .dropdown-menu li a:hover {
+            background-color: #f8f9fa;
+        }
+
+         #welcome {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Ensures video fits within the viewport */
+}
+          .image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 5px 2px 20px 3px rgb(79, 79, 79);
+          }
+       
+.popup {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    text-align: center;
+    opacity: 0; 
+    animation: moveUp 1s ease-out forwards; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    max-width: 700px; 
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem; 
+    color: #333; 
+    z-index: 9999; 
+    line-height: 1.6;                     
+}
+
+/* Style for headings inside the popup */
+.popup h1, .popup h2, .popup h3 {
+    color: #444;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Style for paragraphs inside the popup */
+.popup p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Style for links inside the popup */
+.popup a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.popup a:hover {
+    color: #004080; 
+}
+
+/* Style for buttons inside the popup */
+.popup button {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+    background-color: #e65c00; 
+}
+
+/* Keyframe animation to move the popup up */
+@keyframes moveUp {
+    0% {
+        top: 100%; 
+        opacity: 0; 
+    }
+    100% {
+        top: 50%;
+        opacity: 1; 
+    }
+}
+     .services-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.service-card {
+    width: 350px;
+    height: 350px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.service-card button {
+    align-self: center;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-card button:hover {
+    background-color: #0056b3;
+}
+
+
+    
+	/*section*/                                                                                                                                                 /* Sections */
+        section {
+            padding: 5rem 3rem;
+            background-color: #ffffff;
+        }
+
+        section:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .content .image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content .info {
+            max-width: 700px;
+        }
+
+        .content .info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .content .info p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .content .info a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .content .info a:hover {
+            background-color: #0056b3;
+        }                                                                                                                                                     <!-- About Section -->
+   
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #007BFF;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0056b3;
+        }
+
+        footer .contact, footer .map {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Gallery Section */
+      section.trending-gallery {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.trending-gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.trending-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.trending-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trending-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.trending-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.trending-card:hover img {
+    transform: scale(1.1);
+}
+
+.trending-card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+}

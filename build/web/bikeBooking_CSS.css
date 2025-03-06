@@ -1,0 +1,156 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+       
+        .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button:hover {
+      background-color: #005BB5;
+    }
+     /* Dropdown Menu Styles */
+    .dropdown-menu {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none; /* Hidden by default */
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+    }
+
+    .dropdown-menu li {
+      margin: 5px 0;
+    }
+
+    .dropdown-menu li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-menu li a:hover {
+      text-decoration: underline;
+    }
+
+        header {
+            background-color: #000; /* Black background */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .card {
+            flex: 0 1 calc(23.33% - 20px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card .price {
+            font-size: 18px;
+            color: #e67e22;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .redirect-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .redirect-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .redirect-buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 1024px) {
+            .card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 0 1 calc(100% - 20px);
+            }
+
+            .redirect-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
